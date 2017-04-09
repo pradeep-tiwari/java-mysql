@@ -1,0 +1,71 @@
++-----------------------------------------------------------------------------------
+Reading Data
++-----------------------------------------------------------------------------------
+
+--> First we need to create a Statement object.
+--> We can now send the request to the database.
+
+
++-----------------------------------------------------------------------------------
+Statement Interface
++-----------------------------------------------------------------------------------
+
+--> A Statement object provides executeQuery() method that accepts an SQL statement.
+--> Before executing a query, we need to create a Statement object by calling the
+    Connection object's createStatment() method.
+
+
++-----------------------------------------------------------------------------------
+ResultSet Interface
++-----------------------------------------------------------------------------------
+
+--> A ResultSet object encapsulates the returned dataset and provides methods to
+    work with it.
+--> It can be scrollable or forward-only.
+--> A scrollable result set allows to move the cursor at any record.
+--> A forward-only result set allows to move the cursor one record at a time.
+--> In MySQL, default result set type is scrollable.
+
+
++-----------------------------------------------------------------------------------
+Reading Records
++-----------------------------------------------------------------------------------
+
+--> The ResultSet object has a cursor that initially points before the first row of
+    fetched dataset.
+--> Note that the records in the result set are numbered starting from 1 and not 0.
+--> Use its last() method to move the cursor to the last record.
+--> Use its next() method to move the cursor to the next record.
+--> Use its beforeFirst() method to move the cursor before the first record.
+--> Use its afterLast() method to move the cursor after the last record.
+--> Use its absolute(int row) method to move the cursor at the specified record.
+--> Use its isBeforeFirst(), isFirst(), isLast(), isAfterLast() boolean methods to
+    check the cursor position.
+
+
++-----------------------------------------------------------------------------------
+Using Parameterized Queries
++-----------------------------------------------------------------------------------
+
+--> Use PreparedStatement object to prepare dynamic quries that are parameterized.
+
+
++-----------------------------------------------------------------------------------
+Calling Stored Procedures
++-----------------------------------------------------------------------------------
+
+--> Same as prepared statement with few modifications.
+
+--> The sql is wrapped inside {}.
+
+    String sql = "{call GetCategoryInfo(?)}";
+
+--> We use CallableStatement interface and prepareCall() method on the connection
+    object.
+
+
++-----------------------------------------------------------------------------------
+Sample Demo
++-----------------------------------------------------------------------------------
+
+--> look at the file: src/ReadOperationsDemo.java

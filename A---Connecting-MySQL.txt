@@ -1,0 +1,27 @@
++-----------------------------------------------------------------------------------
+Environment
++-----------------------------------------------------------------------------------
+
+--> NetBeans 8.1
+--> Java 8 SDK
+--> MySQL 5.6
+--> Connector/J 5.1
+
+
++-----------------------------------------------------------------------------------
+Installing MySQL Java Driver
++-----------------------------------------------------------------------------------
+
+--> Download Connector/J from the following link:
+
+    www.mysql.com/downloads/
+
+--> Simply paste the jar file in Libraries folder in NetBeans and you are done.
+
+
++-----------------------------------------------------------------------------------
+Connecting to Database Server
++-----------------------------------------------------------------------------------
+
+--> Call the DriverManager.getConnection() method to get a database handle.
+--> See the working code example file: src/DBConnector.java
